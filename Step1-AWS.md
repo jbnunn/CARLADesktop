@@ -83,6 +83,10 @@ nautilus &
 gnome-terminal
 ```
 
+Then, modify the permissions of the file you just created:
+
+    chmod +x ~/.vnc/xstartup
+
 ### Start the VNC server
 
 Any time you want to connect via VNC remotely, you'll need to use the following command. Let's run it now:
