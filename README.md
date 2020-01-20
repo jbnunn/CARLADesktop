@@ -7,7 +7,7 @@ This repository provides easy-to-follow instructions for getting a CARLA environ
 ## Prerequisites
 
 * An AWS account
-* Some free time on your hands
+* About 30 minutes of free time on your hands
 
 ## What you'll accomplish
 
