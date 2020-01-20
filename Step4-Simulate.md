@@ -1,6 +1,8 @@
 ## Run a Simulation
 
-* Open a terminal in your virtual Ubuntu deskop
+### Open a terminal in your virtual Ubuntu deskop
+
+    ssh -i "your.pem" -L 5901:localhost:5901 ubuntu@ec2-11-222-33-444.compute-1.amazonaws.com
 
 ### Start the CARLA server
 
