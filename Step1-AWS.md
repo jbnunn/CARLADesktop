@@ -5,7 +5,7 @@
 
 ![marketplace](img/ami-aws-marketplace.png)
 
-* The AMI is optimized for graphical and deep learning applications, and comes with many deep learning frameworks. What we really want out of it are pre-installed NVIDIA drivers. [You can read more about the AMI here.](https://aws.amazon.com/marketplace/pp/B077GCH38C?ref=cns_srchrow) 
+* Use the Ubuntu 16.04 version. This AMI is optimized for graphical and deep learning applications, and comes with many deep learning frameworks. What we really want out of it are pre-installed NVIDIA drivers. [You can read more about the AMI here.](https://aws.amazon.com/marketplace/pp/B077GCH38C?ref=cns_srchrow) 
 
 * Use the wizard to follow the the steps to launch your image on an EC2 machine. Currently, the most cost-effective instance type is the __g3s.xlarge__. 
 
