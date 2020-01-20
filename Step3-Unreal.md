@@ -23,6 +23,6 @@ In a terminal for your Ubuntu server, download the Unreal Engine code. This tuto
 
 Note: This is the longest part of the tutorial, and will take up to two hours to complete.
 
-    ./Setup.sh && ./GenerateProjectFiles.sh && make
+    nohup ./Setup.sh && ./GenerateProjectFiles.sh && make
 
 When the build completes, you're ready for [Step 4 - Run a Simulation](Step4-Simulate.md).
