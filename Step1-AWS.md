@@ -40,7 +40,7 @@ sudo dpkg -i virtualgl*.deb
 rm virtualgl*.deb
 
 # TurboVNC
-wget https://sourceforge.net/projects/turbovnc/files/2.2.3/turbovnc_2.2.3_amd64.deb/download -O turbovnc_2.2.3_amd64.deb 
+wget https://sourceforge.net/projects/turbovnc/files/2.1.1/turbovnc_2.1.1_amd64.deb/download -O turbovnc_2.1.1_amd64.deb 
 sudo dpkg -i turbovnc*.deb
 rm turbovnc*.deb
 
