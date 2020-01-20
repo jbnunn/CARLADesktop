@@ -20,7 +20,7 @@ For each of those ports, take care to make the source IP as specific as possible
 
 ## Setup your VM
 
-* Once your VM has launched, SSH into it. Configure it with the following script
+* Once your VM has launched, SSH into it. Run the following commands to configure your machine:
 
 ```
 # VNC and xterm
@@ -45,7 +45,7 @@ sudo dpkg -i turbovnc*.deb
 rm turbovnc*.deb
 
 # Extra packages
-sudo apt install -y x11-server-utils libxrandr-dev
+sudo apt install -y libxrandr-dev
 
 # Clean up
 sudo apt-get clean && \
