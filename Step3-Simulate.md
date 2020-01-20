@@ -25,9 +25,7 @@ If you haven't already, use a VNC client to connect to `localhost:5901`.
 
 ### Start the CARLA server
 
-```
-SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -carla-server
-```
+    SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -carla-server
 
 This should lead to a lot of output, but it should eventually get to a waiting state, indicating that it is ready to listen for connections:
 
@@ -49,7 +47,7 @@ This should lead to a lot of output, but it should eventually get to a waiting s
 
 Follow the examples below to launch a windowed view of the simulator with actors in various scenarios:
 
-#### Manual control of a character in the game
+#### Launch simulation with manual control of a car
 
     python manual_control.py
 
