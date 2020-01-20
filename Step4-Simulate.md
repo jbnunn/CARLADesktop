@@ -5,7 +5,6 @@
 ### Start the CARLA server
 
 ```
-cd CARLA
 SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -carla-server
 ```
 
@@ -22,7 +21,7 @@ and indicate that the server is running.
 
 ### Start a CARLA client
 
-* Leave the server running in a terminal, and open another on yoru virtual desktop. By default, this terminal starts with Python 3. We'll need Python 2 for this example. Activate it with
+* Leave the server running in a terminal, and open another on your virtual desktop. By default, this terminal starts with Python 3. We'll need Python 2 for this example. Activate it with
 
         source activate python2
 
