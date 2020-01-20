@@ -23,7 +23,7 @@ Use the Ubuntu Desktop you setup in [Step 1](./Step1-AWS.md) to open a browser t
 
 * In the Linux desktop terminal you opened above, create a new Conda environment. Conda allows you to manage multiple Python installs, and keeps your dependencies from colliding with other projects
 
-        conda create -n carla python=3.7
+        conda create -n carla python=2.7
 
 * After the envrionment creation completes, activate it:
 
