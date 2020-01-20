@@ -59,45 +59,24 @@ Log out of the instance, then log back in with port forwarding, substituting the
 
     ssh -i "your.pem" -L 5901:localhost:5901 ubuntu@ec2-11-222-33-444.compute-1.amazonaws.com
 
-### Update your VNC settings
-
-Replace the contents of ~/.vnc/xstartup with the following:
-
-```
-#!/bin/sh
-
-unset SESSION_MANAGER
-unset DBUS_SESSION_BUS_ADDRESS
-dbus-launch xfce4-session
-
-[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
-[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-
-xsetroot -solid grey
-
-vncconfig -iconic &
-gnome-panel &
-gnome-settings-daemon &
-metacity &
-nautilus &
-gnome-terminal
-```
-
-Then, modify the permissions of the file you just created:
-
-    chmod +x ~/.vnc/xstartup
-
 ### Start the VNC server
 
 Any time you want to connect via VNC remotely, you'll need to use the following command. Let's run it now:
 
-    vncserver -geometry 1920x1080
+    /opt/TurboVNC/bin/vncserver -geometry 1920x1080
+
 
 ### Connect to your EC2 server with a VNC client
 
 Your EC2 server is now listening for connections. Use a VNC client (like RealVNC) to connect with your server. Because we forwarded port 5901, we will connect to that port. You'll login with the same password you entered while setting up the VM earlier in this document.
 
-![vnc](img/vnc.png)
+This should bring up an empty, black window. Back in your terminal where you launched `/opt/TurboVNC/bin/vncserver`, run
 
-If you see the desktop of your EC2 instance, you're ready for [Step 2-Install CARLA](Step2-CARLA.md).
+    export DISPLAY=:1 # if your vncserver started in DISPLAY :1
+    
+Then, try to run a graphical program, like `xeyes`:
+
+    xeyes
+    
+In your blank window you should now see a pair of eyes that can follow the mouse around. If you see the eyes, you're ready for [Step 2-Install CARLA](Step2-CARLA.md).
 
