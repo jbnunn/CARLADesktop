@@ -19,7 +19,7 @@ By following the steps below, you will
 
 When you've completed these steps, you'll have a working CARLA environment.
 
-![CARLA](img/carla.png)
+![CARLA](img/carla.gif)
 
 ## After a successful install, come back here to easily relaunch your server and client:
 
