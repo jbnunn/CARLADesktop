@@ -71,7 +71,7 @@ Your EC2 server is now listening for connections. Use a VNC client (like RealVNC
 
 ![VNC client address](img/vnc.png)
 
-This should bring up an empty, black window. Back in your terminal where you launched `/opt/TurboVNC/bin/vncserver`, run
+This should bring up an empty ubuntu destkop (or black window). Back in your terminal where you launched `/opt/TurboVNC/bin/vncserver`, run
 
     export DISPLAY=:1 # if your vncserver started in DISPLAY :1
     
