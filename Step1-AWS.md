@@ -50,9 +50,7 @@ rm turbovnc*.deb
 sudo apt install -y libxrandr-dev
 
 # Clean up
-sudo apt-get clean && \
-sudo apt-get autoremove && \
-sudo rm -r /var/lib/apt/lists/*
+sudo apt-get clean && sudo apt-get autoremove && sudo rm -r /var/lib/apt/lists/*
 ```
 
 ## Connect with a VNC Client
