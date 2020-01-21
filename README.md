@@ -40,3 +40,5 @@ Copy [./server.sh](server.sh) and [./client.sh](client.sh) to your EC2 instance,
 ### VNC
 
 Now you're ready to view the output from your EC2 machine. Open your VNC client to localhost:5901 to begin interacting!
+
+Get started with [Step 1](./Step1-AWS.md)...
