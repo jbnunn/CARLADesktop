@@ -26,7 +26,7 @@ For each of those ports, take care to make the source IP as specific as possible
 
 ```
 # VNC and xterm
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal xfce4 vnc4server xterm
 
 # Install lubuntu
