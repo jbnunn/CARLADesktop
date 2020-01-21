@@ -71,8 +71,7 @@ Any time you want to connect via VNC remotely, you'll need to use the following 
 
 Your EC2 server is now listening for connections. Use a VNC client (like RealVNC or VNC Viewer) to connect with your server. Because we forwarded port 5901, we use that port to connect to. Enter "localhost:5901" into your VNC client's address and connect.
 
-![VNC client address](img/VNC.png)
-![security-group](img/sg.png)
+![VNC client address](img/vnc.png)
 
 This should bring up an empty, black window. Back in your terminal where you launched `/opt/TurboVNC/bin/vncserver`, run
 
