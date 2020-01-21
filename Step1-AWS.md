@@ -6,6 +6,8 @@ If you build the GPU server, you can also use it as your client. The client will
 
 ### CARLA Server (GPU)
 
+If you only wish to build a client to connect to a CARLA server, you can skip this step and continue on to **CARLA Client (CPU)**.
+
 * From the [EC2 console](https://console.aws.amazon.com/ec2/v2/), click the **Launch Instance** button, then click on the "AWS Marketplace" tab in the left navigation.
 * In the search box, search for "ubuntu deep learning", then click the **Select** button.
 
