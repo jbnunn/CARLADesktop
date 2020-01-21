@@ -7,13 +7,13 @@ This repository provides easy-to-follow instructions for getting a CARLA environ
 ## Prerequisites
 
 * An AWS account
-* About 30 minutes of free time on your hands
+* About 20 minutes of free time on your hands
 
 ## What you'll accomplish
 
 By following the steps below, you will
 
-1) [Launch a GPU-based virtual machine on Amazon Web Services](./Step1-AWS.md) (~15 minutes)
+1) [Launch and configure GPU-based virtual machine on Amazon Web Services](./Step1-AWS.md) (~10 minutes)
 2) [Install CARLA](./Step2-CARLA.md) (~10 minutes)
 4) [Simulate!](./Step3-Simulate.md)
 
@@ -25,14 +25,14 @@ When you've completed these steps, you'll have a working CARLA environment.
 
 Once you've gone through these steps, you can can open two terminals and run the following scripts to easily kick off your simulation:
 
-### Server
+### Server (terminal 1)
 
 Copy [./server.sh](server.sh) and [./client.sh](client.sh) to your EC2 instance, then:
 
     ssh -i "your.pem" ubuntu@ec2-11-222-33-444.compute-1.amazonaws.com
     bash server.sh
 
-### Client
+### Client (terminal 2)
 
     ssh -i "your.pem" -L 5901:localhost:5901 ubuntu@ec2-11-222-33-444.compute-1.amazonaws.com
     bash client.sh
