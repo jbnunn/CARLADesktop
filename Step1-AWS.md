@@ -1,4 +1,10 @@
-## Create a GPU-based VM on AWS
+There are two paths you can take here. One is setting up your own CARLA server. This requires a GPU-based NVIDIA virtual machine. As of January 2020, the least-expensive GPU-based VM on AWS is the __g3s.xlarge__, which costs about $0.75/hr. The other path is just setting up a client can connect to someone else's CARLA server. This requires a basic, CPU-based virtual machine. A good choice for this is the __m5.large__, which costs about $0.09/hr.
+
+If you build the GPU server, you can also use it as your client. The client will simply connect to localhost.
+
+## Create VM(s) on AWS
+
+### CARLA Server (GPU)
 
 * From the [EC2 console](https://console.aws.amazon.com/ec2/v2/), click the **Launch Instance** button, then click on the "AWS Marketplace" tab in the left navigation.
 * In the search box, search for "ubuntu deep learning", then click the **Select** button.
@@ -7,9 +13,21 @@
 
 * Use the Ubuntu 16.04 version. This AMI is optimized for graphical and deep learning applications, and comes with many deep learning frameworks. What we really want out of it are pre-installed NVIDIA drivers. [You can read more about the AMI here.](https://aws.amazon.com/marketplace/pp/B077GCH38C?ref=cns_srchrow) 
 
-* Use the wizard to follow the the steps to launch your image on an EC2 machine. Currently, the most cost-effective instance type for running CARLA is the __g3s.xlarge__, which is $0.75/hr as of Jan. 2020. Make sure to stop the instance when not in use, to avoid high charges. 
+* Use the wizard to follow the steps to launch your image on an EC2 machine. Currently, the most cost-effective instance type for running CARLA is the __g3s.xlarge__, which is $0.75/hr as of Jan. 2020. Make sure to stop the instance when not in use, to avoid high charges. 
+
+Continue on to the __Storage__ section below.
+
+### CARLA Client (CPU)
+
+* From the [EC2 console](https://console.aws.amazon.com/ec2/v2/), click the **Launch Instance** button, then search for Ubuntu 16.04.
+
+* Use the wizard to launch the virtual machine. Choose __m5.large__ as the instance type. Make sure to stop the instance when not in use, to avoid high charges. 
+
+### Storage 
 
 * When the wizard brings you to storage, you will need at least 150GB of space.
+
+### Security Groups
 
 * You will need to open the follwing inbound ports when creating a security group:
 

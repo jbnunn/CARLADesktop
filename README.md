@@ -2,7 +2,7 @@
 
 [CARLA](http://carla.org), the open-source simulator for autonomous driving research, is notoriously painful to setup (as of Jan, 2020). The documentation is filled with version conflicts, outdated examples, and innacurate instructions. 
 
-This repository provides easy-to-follow instructions for getting a CARLA environment up and running using a GPU-enabled virtual machine on AWS.
+This repository provides easy-to-follow instructions for getting a CARLA environment up and running. 
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ This repository provides easy-to-follow instructions for getting a CARLA environ
 
 By following the steps below, you will
 
-1) [Launch and configure GPU-based virtual machine on Amazon Web Services](./Step1-AWS.md) (~10 minutes)
+1) [Launch and configure a virtual machine on Amazon Web Services](./Step1-AWS.md) (~10 minutes)
 2) [Install CARLA](./Step2-CARLA.md) (~10 minutes)
 4) [Simulate!](./Step3-Simulate.md)
 
