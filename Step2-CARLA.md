@@ -20,6 +20,7 @@ continue this project in 0.9.5 until CARLA becomes more stable.
         gunzip CARLA_0.9.5.tar.gz
         mkdir CARLA && cd CARLA
         tar -xvf ../CARLA_0.9.5.tar
+        rm ../*.tar
 
 #### Create a Python environment
 
