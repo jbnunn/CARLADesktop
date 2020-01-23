@@ -2,7 +2,7 @@
 
 By the end of step, you'll have a working CARLA simulation running in a VNC window.
 
-![img/drive.png](Simulation)
+![Simulation](/img/drive.png)
 
 ### Connect to your EC2 instance
 
@@ -21,7 +21,7 @@ We need to start a TurboVNC server (which will open the black screen like you op
 
 If you haven't already, use a VNC client to connect to `localhost:5901`.
 
-![vnc.png](img/vnc.png)
+![VNC](/img/vnc.png)
 
 ### Start the CARLA server
 
@@ -29,7 +29,7 @@ If you haven't already, use a VNC client to connect to `localhost:5901`.
 
 This should lead to a lot of output, but it should eventually get to a waiting state, indicating that it is ready to listen for connections:
 
-![img/linux.png](CARLA Server)
+![CARLA Server](/img/linux.png)
 
 ### Start a CARLA client
 
