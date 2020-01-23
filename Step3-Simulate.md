@@ -2,7 +2,7 @@
 
 By the end of step, you'll have a working CARLA simulation running in a VNC window.
 
-!(Simulation)[img/drive.png]
+![img/drive.png](Simulation)
 
 ### Connect to your EC2 instance
 
