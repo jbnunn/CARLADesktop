@@ -1,4 +1,4 @@
 source activate carla
-cd ~/CARLA/PythonAPI/examples
 export DISPLAY=:1
+cd ~/CARLA/PythonAPI/examples
 python manual_control.py
