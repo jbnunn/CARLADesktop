@@ -2,7 +2,7 @@
 
 [CARLA](http://carla.org), the open-source simulator for autonomous driving research, is notoriously painful to setup (as of Feb, 2020). The documentation is filled with version conflicts, outdated examples, and innacurate instructions. 
 
-This repository provides easy-to-follow instructions for getting a CARLA environment up and running. 
+This repository provides instructions for getting a CARLA environment up and running. 
 
 ## Prerequisites
 
@@ -87,13 +87,12 @@ Setting a password is useful if you're going to be in the Ubuntu desktop a lot.
 
     sudo passwd ubuntu
 
-    sudo apt-get update && sudo apt-get upgrade -y
-
 ### Install Ubuntu desktops
 
 You'll use an Ubuntu desktop to give you GUI access to your CARLA simulation:
 
 ```
+sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal xfce4 xterm
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get install -y lubuntu-desktop
