@@ -109,6 +109,12 @@ sudo apt update
 sudo apt upgrade
 ```
 
+### Install CUDA utils
+
+```
+sudo apt-get install -y nvidia-cuda-toolkit
+```
+
 ## Install CARLA 0.9.5
 
 Install CARLA 0.9.5. As of February, 2020, this is not the newest version but the version most compatible with the `carla` Python library:
