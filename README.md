@@ -117,7 +117,7 @@ sudo apt-get install -y nvidia-cuda-toolkit
 
 ## Install CARLA 0.9.8
 
-Install CARLA 0.9.8 per [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/:
+Install CARLA 0.9.8 per [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/):
 
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
