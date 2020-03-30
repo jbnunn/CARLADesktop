@@ -1,8 +1,6 @@
 # CARLA Desktop
 
-[CARLA](http://carla.org), the open-source simulator for autonomous driving research, is notoriously painful to setup (as of Feb, 2020). The documentation is filled with version conflicts, outdated examples, and innacurate instructions. 
-
-This repository provides instructions for getting a CARLA environment up and running. 
+This repository provides instructions for setting up an Amazon EC2 virtual machine to run [CARLA](http://carla.org), the open-source simulator for autonomous driving research. 
 
 ## Prerequisites
 
@@ -21,18 +19,23 @@ When you've completed these steps, you'll have a working CARLA environment.
 
 ![CARLA](img/carla.gif)
 
+## Changelog
+
+* Feb 2020 - CARLA 0.9.5 instructions
+* Mar 2020 - Updated to use CARLA 0.9.8 (and simplified the process)
+
 # Get started
 
 ## Launch and configure a virtual machine on AWS
 
-You will launch the [NVIDIA Gaming PC for Ubuntu 18.04 AMI](https://aws.amazon.com/marketplace/pp/B07SSKJMBJ?ref=cns_1clkPro). 
+We'll use the [AWS Deep Learning AMI for Ubuntu 18.04](https://docs.aws.amazon.com/dlami/latest/devguide/ubuntu18-04.html).
 
-* From the [EC2 console](https://console.aws.amazon.com/ec2/v2/), click the **Launch Instance** button, then click on the "AWS Marketplace" tab in the left navigation.
-* In the search box, search for "nvidia gaming pc ubuntu", then click the **Select** button.
+* From the AWS [EC2 console](https://console.aws.amazon.com/ec2/v2/), click the **Launch Instance** button, then click on the "AWS Marketplace" tab in the left navigation.
+* In the search box, search for "AWS Deep Learning AMI Ubuntu", then click the **Select** button.
 
 ![marketplace](img/ami-aws-marketplace.png)
 
-* This AMI is optimized for GPU applications. Use the wizard to follow the steps to launch your image on an EC2 machine. Currently, the most cost-effective instance type for running CARLA is the __g4dn.xlarge__, which is $0.526/hr as of February 2020. Make sure to stop the instance when not in use to avoid high charges. 
+* This AMI is optimized for GPU applications. Use the wizard to follow the steps to launch your image on an EC2 machine. Currently, the most cost-effective instance type for running CARLA is the __g4dn.xlarge__, which is $0.526/hr as of March 2020. Make sure to stop the instance when not in use to avoid high charges. 
 
 ### Modify the EC2 Security Group
 
@@ -67,9 +70,10 @@ After the AMI boots, SSH into the machine and check `nvidia-smi` to confirm you 
 
 NoMachine allows you to access the virtual machine render the simulation much faster than VNC. 
 
-### First, install the server:
+### First, install the server on the virtual machine:
 
 ```
+cd ~
 wget https://download.nomachine.com/download/6.9/Linux/nomachine_6.9.2_1_amd64.deb
 sudo dpkg -i no*.deb
 rm no*.deb
@@ -98,26 +102,9 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get install -y lubuntu-desktop
 ```
 
-### Update graphics / utils
-
-```
-sudo add-apt-repository ppa:oibaf/graphics-drivers
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev mesa-utils
-sudo apt-get install -y libvulkan1 mesa-vulkan-drivers vulkan-utils
-sudo apt update
-sudo apt upgrade
-```
-
-### Install CUDA utils
-
-```
-sudo apt-get install -y nvidia-cuda-toolkit
-```
-
 ## Install CARLA 0.9.8
 
-Install CARLA 0.9.8 per [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/):
+Install CARLA 0.9.8 per the instructions at [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/):
 
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
@@ -126,33 +113,22 @@ sudo apt-get update
 sudo apt-get install carla
 ```
 
-### Install Conda and create a CARLA environment
+### Create a CARLA environment in Conda
 
-Use Conda to install Python 3 on the system and isolate the Python libraries CARLA needs:
+Conda will allow you to run multiple Python projects without worrying about dependency collisions, and isolate the Python libraries CARLA needs:
 
 ```
-cd /tmp
-wget https://repo.continuum.io/archive/Anaconda3-2019.10-Linux-x86_64.sh
-bash Anaconda3-2019.10-Linux-x86_64.sh
-source ~/.bashrc
+cd ~
 conda create -n carla python=3.5
-conda activate carla
+source activate carla
 ```
 
 ### Install CARLA Python requirements
 
 Install the required libraries needed to run the simulation:
 
-
 ```
-cd /home/ubuntu/CARLA/PythonAPI/carla/dist
-easy_install carla-0.9.5-py3.5-linux-x86_64.egg
-
-cd /home/ubuntu/CARLA/PythonAPI/carla
-pip install -r requirements.txt
-
-cd /home/ubuntu/CARLA/PythonAPI/examples
-pip install -r requirements.txt
+pip install pygame numpy
 ```
 
 ### Reboot and login with NoMachine
@@ -175,17 +151,26 @@ When you've created the connection, open it, and login with your "ubuntu" userna
 
 ## Run the CARLA Simulation
 
-Open Ubuntu's terminal application. In one window, start the CARLA server:
+### Start the CARLA Server
 
-    cd /home/ubuntu/CARLA
-    SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh -carla-server
+Open Ubuntu's terminal application. In one window, start CARLA:
+
+    cd /opt/carla/bin
+    SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh
+
+No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors error, I've found another reboot of the system usually fixes it.
+
+### Launch the manual control script
 
 In another terminal window (or tab), start the simulation:
 
-    conda activate carla
-    cd /home/ubuntu/CARLA/PythonAPI/examples
+    source activate carla
+    cd /opt/carla/binPythonAPI/examples
     python manual_control.py
+
+This will bring up the CARLA simulation window. You can control your car with the `W,A,S,D` keys. Check the source for `manual_control.py` for ways to change or interact with your environment.
 
 # You're finished and ready to simulate!
 
 ![CARLA](img/carla.gif)
+
