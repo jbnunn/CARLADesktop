@@ -115,15 +115,15 @@ sudo apt upgrade
 sudo apt-get install -y nvidia-cuda-toolkit
 ```
 
-## Install CARLA 0.9.5
+## Install CARLA 0.9.8
 
-Install CARLA 0.9.5. As of February, 2020, this is not the newest version but the version most compatible with the `carla` Python library:
+Install CARLA 0.9.8 per [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/:
 
 ```
-wget http://carla-assets-internal.s3.amazonaws.com/Releases/Linux/CARLA_0.9.5.tar.gz
-gunzip CARLA_0.9.5.tar.gz
-mkdir CARLA && cd CARLA
-tar -xvf ../CARLA_0.9.5.tar
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
+sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.8/ all main"
+sudo apt-get update
+sudo apt-get install carla
 ```
 
 ### Install Conda and create a CARLA environment
