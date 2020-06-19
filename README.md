@@ -110,7 +110,7 @@ Install CARLA 0.9.8 per the instructions at [https://carla.readthedocs.io/en/lat
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
 sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.8/ all main"
 sudo apt-get update
-sudo apt-get install carla
+sudo apt-get install carla-simulator
 ```
 
 ### Create a CARLA environment in Conda
