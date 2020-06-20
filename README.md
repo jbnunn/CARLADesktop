@@ -74,7 +74,7 @@ NoMachine allows you to access the virtual machine render the simulation much fa
 
 ```
 cd ~
-wget https://download.nomachine.com/download/6.9/Linux/nomachine_6.9.2_1_amd64.deb
+wget https://download.nomachine.com/download/6.11/Linux/nomachine_6.11.2_1_amd64.deb
 sudo dpkg -i no*.deb
 rm no*.deb
 ```
