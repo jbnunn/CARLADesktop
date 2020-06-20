@@ -155,17 +155,17 @@ When you've created the connection, open it, and login with your "ubuntu" userna
 
 Open Ubuntu's terminal application. In one window, start CARLA:
 
-    cd /opt/carla/bin
+    cd /opt/carla-simulator/bin
     SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh
 
-No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors error, I've found another reboot of the system usually fixes it.
+No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors, I've found another reboot of the system usually fixes it.
 
 ### Launch the manual control script
 
 In another terminal window (or tab), start the simulation:
 
     source activate carla
-    cd /opt/carla/binPythonAPI/examples
+    cd /opt/carla-simulator/PythonAPI/examples
     python manual_control.py
 
 This will bring up the CARLA simulation window. You can control your car with the `W,A,S,D` keys. Check the source for `manual_control.py` for ways to change or interact with your environment.
