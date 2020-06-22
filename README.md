@@ -74,7 +74,7 @@ NoMachine allows you to access the virtual machine render the simulation much fa
 
 ```
 cd ~
-wget https://download.nomachine.com/download/6.9/Linux/nomachine_6.9.2_1_amd64.deb
+wget https://download.nomachine.com/download/6.11/Linux/nomachine_6.11.2_1_amd64.deb
 sudo dpkg -i no*.deb
 rm no*.deb
 ```
@@ -110,7 +110,7 @@ Install CARLA 0.9.8 per the instructions at [https://carla.readthedocs.io/en/lat
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 304F9BC29914A77D
 sudo add-apt-repository "deb [arch=amd64 trusted=yes] http://dist.carla.org/carla-0.9.8/ all main"
 sudo apt-get update
-sudo apt-get install carla
+sudo apt-get install carla-simulator
 ```
 
 ### Create a CARLA environment in Conda
@@ -155,17 +155,17 @@ When you've created the connection, open it, and login with your "ubuntu" userna
 
 Open Ubuntu's terminal application. In one window, start CARLA:
 
-    cd /opt/carla/bin
+    cd /opt/carla-simulator/bin
     SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh
 
-No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors error, I've found another reboot of the system usually fixes it.
+No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors, I've found another reboot of the system usually fixes it.
 
 ### Launch the manual control script
 
 In another terminal window (or tab), start the simulation:
 
     source activate carla
-    cd /opt/carla/binPythonAPI/examples
+    cd /opt/carla-simulator/PythonAPI/examples
     python manual_control.py
 
 This will bring up the CARLA simulation window. You can control your car with the `W,A,S,D` keys. Check the source for `manual_control.py` for ways to change or interact with your environment.
