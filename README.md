@@ -158,6 +158,12 @@ Open Ubuntu's terminal application. In one window, start CARLA:
     cd /opt/carla-simulator/bin
     SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh
 
+For some machines, the command doesn't seems to work so you can try an alternate command that may do the trick for you.
+```
+    cd /opt/carla-simulator/bin
+    DISPLAY= ./CarlaUE4.sh -opengl -carla-port=2000
+```
+
 No window will open yet, CARLA is just waiting for you to interact with it via the Python API. If you run into errors, I've found another reboot of the system usually fixes it.
 
 ### Launch the manual control script
