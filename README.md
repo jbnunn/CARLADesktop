@@ -158,7 +158,7 @@ Open Ubuntu's terminal application. In one window, start CARLA:
     cd /opt/carla-simulator/bin
     SDL_VIDEODRIVER=offscreen ./CarlaUE4.sh
 
-For some machines, the command doesn't seems to work so you acn try an alternate command that may do the trick for you.
+For some machines, the command doesn't seems to work so you can try an alternate command that may do the trick for you.
 ```
     cd /opt/carla-simulator/bin
     DISPLAY= ./CarlaUE4.sh -opengl -carla-port=2000
